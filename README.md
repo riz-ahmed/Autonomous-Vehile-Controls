@@ -13,3 +13,11 @@ A linearized vehicle model is developed using a single track model. For this lin
 
 [To be Considered later during the project]
 Using the controls developed for the lienarized vehcile model, a non-liear vehicle mdoel is used whcih will be developed analytically that consists of a non-holonomically constrained wheel (which makes the system non-lienar). The results to be pubished later.
+
+<b>Controller Tuning using Pole Placement</b>
+
+Script file VehicleSteering_PolePlacement.m is used, model file is Vehicle_Steering_sim_PolePlacement.slx
+
+<b>Controller Tuning using LQR</b>
+
+Script file VehicleSteering_LQR.m is used, model file is Vehicle_Steering_sim_PolePlacement.slx
