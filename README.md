@@ -19,12 +19,6 @@ A linearized vehicle model is developed using a single track model. For this lin
   <li>A reference signal <MATH>r(t)</MATH> is used as an input for achieveing reference tracking objective for the given contoller design, paths are generated and given as input <MATH>r(t)</MATH> for the system to follow and achieve the desired results </li>
 </ul>
 
-1. Dynamic analysis of the vehilce model and realizing paramters that are important for control
-2. Observablitiy and controlability analysis is conduted
-3. An observer model is developed using a Kalman Filter to observe required states of the vehicle model.
-4. Simple control is developed using pole-placement method (Ackermann's Formula)
-5. LQR and MPC controls are developed in the final phase and tested using various random trajectories as the reference for the vehicle's path to be controllerd.
-
 [To be Considered later during the project]
 Using the controls developed for the lienarized vehcile model, a non-liear vehicle mdoel is used whcih will be developed analytically that consists of a non-holonomically constrained wheel (which makes the system non-lienar). The results to be pubished later.
 
