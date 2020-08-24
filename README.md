@@ -18,7 +18,7 @@ A linearized vehicle model is developed using a single track model. For this lin
   <li>Controllability analysis is conducted and made sure that the system is controllable and control law u(t) can essentailly control each of the Eigen- Vales individually in order to stabilitze the system</li>
   <li>Observability analysis is onducted in order to check that if the system is observable</li>
   <li>Kalman Filter is used as a soft sensor in order to predict missing states required for full - state feed-back control design</li>
-  <li>Full state feedback controller is implemented as per the law:  <MATH>u(t) = -Kx(t) - K_{I}z(t) + k_{r}r(t)</MATH></li>
+  <li>Full state feedback controller is implemented as per the law:  $u(t) = -Kx(t) - K_{I}z(t) + k_{r}r(t)$</li>
   <li>For a simple case, the controller as mentioned above is tuned using Pole Placement Technique</li>
   <li>In the next stage a LQR based tuning tehnique is employed</li>
   <li>A reference signal <MATH>r(t)</MATH> is used as an input for achieveing reference tracking objective for the given contoller design, paths are generated and given as input <MATH>r(t)</MATH> for the system to follow and achieve the desired results </li>
