@@ -39,3 +39,7 @@ Script file VehicleSteering_LQR.m is used, model file is VehicleSteering_sim_LQR
 <p>
   A full satte feeddback controller requires a full set of states that can be measurable. This is not possible in most of the cases and hence, it is required that these missing states need to be derived using some technique. In this section, a Kalman - Filter is used for this purpose, where it is made possible to access the states without even measuring them. Starting from establishing the conidtion that observability is possible and that with a help of an observer a full system state can be determined either directly or in-directly.
 </p>
+
+<p>
+  In this case a closed loop observer is designed, such that the observer is a copy of the original system which has the same inputs as the original system. The feedback to the obserer dynamics is added additionally to the controller inputs. The feedback signal is given by <MATH>L(y - y&#770)</MATH>. That is, the observer signal is compared with the original output and then fedback using an observer gain <MATH>L</MATH>.
+</p>
