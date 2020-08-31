@@ -24,8 +24,10 @@ A linearized vehicle model is developed using a single track model. For this lin
   <li>A reference signal <MATH>r(t)</MATH> is used as an input for achieveing reference tracking objective for the given contoller design, paths are generated and given as input <MATH>r(t)</MATH> for the system to follow and achieve the desired results </li>
 </ul>
 
-<bl>Things considered for the later development</bl>
-Using the controls developed for the lienarized vehcile model, a non-liear vehicle mdoel is used whcih will be developed analytically that consists of a non-holonomically constrained wheel (which makes the system non-lienar). The results to be pubished later.
+<bi>Things considered for the later development</bi>
+<p>
+  Using the controls developed for the lienarized vehcile model, a non-liear vehicle mdoel is used whcih will be developed analytically that consists of a non-holonomically constrained wheel (which makes the system non-lienar). The results to be pubished later.
+</p>
 
 <h3>Controller Tuning using Pole Placement</h3>
 
