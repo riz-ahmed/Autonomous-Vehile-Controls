@@ -37,7 +37,7 @@ Script file VehicleSteering_PolePlacement.m is used, model file is Vehicle_Steer
 
 Script file VehicleSteering_LQR.m is used, model file is VehicleSteering_sim_LQR.slx. The controller here is tuned using MATLAB"s in-built LQR function after the vehicle model is developed into a full-state system. In this case, it is assumed that all the states of the system can be measured directly and therefore, the controller design is porceeded forward using this approach. In later models, a Kalman- Filter will be developed that is used as a Soft-Sensor for measuring / observing the missing states required for a full state-feedback controller
 
-<h3>State Estimation using Kalman - Filter</h3>
+<h3>State Estimation</h3>
 <p>
   A full satte feeddback controller requires a full set of states that can be measurable. This is not possible in most of the cases and hence, it is required that these missing states need to be derived using some technique. In this section, a Kalman - Filter is used for this purpose, where it is made possible to access the states without even measuring them. Starting from establishing the conidtion that observability is possible and that with a help of an observer a full system state can be determined either directly or in-directly.
 </p>
