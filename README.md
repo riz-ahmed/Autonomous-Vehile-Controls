@@ -43,5 +43,5 @@ Script file VehicleSteering_LQR.m is used, model file is VehicleSteering_sim_LQR
 </p>
 
 <p>
-  In this case a closed loop observer is designed, such that the observer is a copy of the original system which has the same inputs as the original system. The feedback to the obserer dynamics is added additionally to the controller inputs. The feedback signal is given by <MATH>L(y - y&#770)</MATH>. That is, the observer signal is compared with the original output and then fedback using an observer gain <MATH>L</MATH>.
+  In this case a closed loop observer is designed, such that the observer is a copy of the original system which has the same inputs as the original system. The feedback to the obserer dynamics is added additionally to the controller inputs. The feedback signal is given by <MATH>L(y - y&#770)</MATH>. That is, the observer signal is compared with the original output and then fedback using an observer gain <MATH>L</MATH>. Such a closed loop design helps in adjusting the characteristic matrix <MATH>(A - LC)</MATH> with observer gain <MATH>L</MATH> so that the closed loop Eigenvalues of the observer can be stabalized.
 </p>
