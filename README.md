@@ -51,5 +51,9 @@ Script file VehicleSteering_LQR.m is used, model file is VehicleSteering_sim_LQR
 <h3>State estimation using Kalman - Bucy Filter</h3>
 
 <p>
-  The most effective estimation of system states required for a full state feeedback controller are dtermined using a cost function that is minimised through varying the observer gain <MATH>L</MATH>. The cost function here is a covariance of measurement noise and process distrubances that minimizes a covariance matrix <MATH>P<sub>x&#771;</sub></MATH>
+  The most effective estimation of system states required for a full state feeedback controller are dtermined using a cost function that is minimised through varying the observer gain <MATH>L</MATH>. The cost function here is a covariance of measurement noise and process distrubances that minimizes a covariance matrix <MATH>P<sub>x&#771;</sub></MATH>. The solution to the covariance matrix is given by solving the Riccati's equaiton, where <MATH>P<sub>x&#771;</sub></MATH> is a matrix of size <MATH>(n x n)</sub></MATH>, <MATH>n</sub></MATH> being the number of system states. 
+</p>
+
+<p>
+  Kalman - Bucy discovered that when the system is observable, the optimal observer gain matrix L is given by <MATH>L = P<sub>x&#771;</sub> C<sup>T</sup> R<sup>-1</sup><sub>w</sub> </MATH>
 </p>
