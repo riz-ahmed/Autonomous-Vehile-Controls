@@ -2,10 +2,12 @@
 Remote Git repository for Project "Autonomous vehicle controls". 
 Vehicle models and control algorithm are developed using Matlab / Simulink
 
-<h2>Running the simulation</h2>
+<b>Running the simulation</b>
 <p>
   The simulation models are all listed inside the Models folder and the corresponding scripts are linked to the simulink models, any changes in the simulation parameters canbe done directly using the individual script files associated to model files. For example, for the simulation of reference tracking contoller using LQR, find the model file models/VehicleSteering_sim_LQR.slx and the corresponding script file scripts/VehicleSteering_LQR.m
 </p>
+
+<h2>Description of the project</h3>
 
 The vehicle model is developed in the state-space form which makes it easier to develop controls using modern state-feedback controls.
 
