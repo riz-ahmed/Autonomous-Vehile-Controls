@@ -2,10 +2,12 @@
 Remote Git repository for Project "Autonomous vehicle controls". 
 Vehicle models and control algorithm are developed using Matlab / Simulink
 
-<h2>Running the simulation</h2>
+<b>Running the simulation</b>
 <p>
   The simulation models are all listed inside the Models folder and the corresponding scripts are linked to the simulink models, any changes in the simulation parameters canbe done directly using the individual script files associated to model files. For example, for the simulation of reference tracking contoller using LQR, find the model file models/VehicleSteering_sim_LQR.slx and the corresponding script file scripts/VehicleSteering_LQR.m
 </p>
+
+<h2>Description of the project</h3>
 
 The vehicle model is developed in the state-space form which makes it easier to develop controls using modern state-feedback controls.
 
@@ -44,4 +46,20 @@ Script file VehicleSteering_LQR.m is used, model file is VehicleSteering_sim_LQR
 
 <p>
   In this case a closed loop observer is designed, such that the observer is a copy of the original system which has the same inputs as the original system. The feedback to the obserer dynamics is added additionally to the controller inputs. The feedback signal is given by <MATH>L(y - y&#770)</MATH>. That is, the observer signal is compared with the original output and then fedback using an observer gain <MATH>L</MATH>. Such a closed loop design helps in adjusting the characteristic matrix <MATH>(A - LC)</MATH> with observer gain <MATH>L</MATH> so that the closed loop Eigenvalues of the observer can be stabalized.
+</p>
+
+<h3>State estimation using Kalman - Bucy Filter</h3>
+
+<p>
+  The most effective estimation of system states required for a full state feeedback controller are dtermined using a cost function that is minimised through varying the observer gain <MATH>L</MATH>. The cost function here is a covariance of measurement noise and process distrubances that minimizes a covariance matrix <MATH>P<sub>x&#771;</sub></MATH>. The solution to the covariance matrix is given by solving the Riccati's equaiton, where <MATH>P<sub>x&#771;</sub></MATH> is a matrix of size <MATH>(n x n)</sub></MATH>, <MATH>n</sub></MATH> being the number of system states. 
+</p>
+
+<p>
+  Kalman - Bucy discovered that when the system is observable, the optimal observer gain matrix L is given by <MATH>L = P<sub>x&#771;</sub> C<sup>T</sup> R<sup>-1</sup><sub>w</sub> </MATH>. This optimal observer gain is used in this project that has the following properties:
+  <ul>
+    <li>always stable</li>
+    <li>the optimal linear filter for state estimation</li>
+    <li><MATH>R<sub>v</sub></MATH> and <MATH>R<sub>w</sub></MATH> are regarded as the design parameters</li>
+</ul>
+There are similarities between Kalman Filter and LQR, in-fact, using them both in the controller design <b><i>linear quadratic Gaussian controller</i></b>.
 </p>
