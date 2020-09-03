@@ -23,7 +23,7 @@ C=[-1 0 1 0 0];                 % output matrix
 %---------------------------------------------------
 % Stochastic prcesses
 %---------------------------------------------------
-Rd = 10^-4;         % road disturbance covariance
+Rd = 10;            % road disturbance covariance
 Rw = 10^-4;         % measurement noise covariance
 
 %---------------------------------------------------
