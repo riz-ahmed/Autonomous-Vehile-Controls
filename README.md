@@ -63,3 +63,18 @@ Script file VehicleSteering_LQR.m is used, model file is VehicleSteering_sim_LQR
 </ul>
 There are similarities between Kalman Filter and LQR, in-fact, using them both in the controller design <b><i>linear quadratic Gaussian controller</i></b>.
 </p>
+
+<h3>Autonomous Lane changing controller</h3>
+<p>
+  Using the single track vehicle model developed earlier, a lane automated lane changing maneuver controller is developed which over takes a preceeding vehicle within 2 seconds which is a moveent of 3.5m. The system states include the lateral velocity and the yaw-rate of the vehicle. The longitudinal velocity is maintained a constant. Control input is the steering rate and lateral position of te vehicle is measured as the output. In order to model the actuator for this autonomous lane changing maneuver, a non-linear sterring actuator is considered which is then linearized about an operating point that makes zero angle towards the heading direction. The steering actuator chnages the steering rate. Furthermore, the vehicles real world position and heading angle are included into the state-space model, this is done mainly for control purposes.
+</p>
+
+<b>Updated system states</b>
+The updated system model now includes the following states
+<ul>
+  <li>lateral position in global frame</li>
+  <li>lateral velocity in vehicle frame</li>
+  <li>orientation angle</li>
+  <li>yaw-rate</li>
+  <li>steering angle</li>
+</ul>
