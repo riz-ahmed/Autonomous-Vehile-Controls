@@ -24,9 +24,9 @@ vx=20;               % Vehicle velocity [m/s]
 % vehcile state space model (lienarzied)
 %---------------------------------------------------
 A = [0 1 vx 0 0;
-     0 -(c1 + c2)/m*vx 0 vx-(a*c1-b*c2)/(m*vx) c1/m;
+     0 -(c1 + c2)/(m*vx) 0 -vx-((a*c1-b*c2)/(m*vx)) c1/m;
      0 0 0 1 0;
-     0 -(a*c1-b*c2)/J*vx 0 -(c1*a^2+c2*b^2)/(J*vx) (a*c1)/J;
+     0 -(a*c1-b*c2)/(J*vx) 0 -(c1*a^2+c2*b^2)/(J*vx) (a*c1)/J;
      0 0 0 0 -(1/tau)];
 B = [0 0 0 0 (k1/tau)]';
 C =[1 0 0 0 0];
@@ -50,7 +50,7 @@ det_cont_model = det(Mc);       % the system is controllable
 
 p_des = A^5 + 33*A^4 + 414*A^3 + 2430*A^2 + 6561*A + 6561*eye(5);
 K = [0 0 0 0 1]*inv(Mc)*p_des;
-kr = -1/(C * inv(A - B*K)*B)
+kr = -1/(C * inv(A - B*K)*B);
 
 %---------------------------------------------------
 % estimator design parameters
