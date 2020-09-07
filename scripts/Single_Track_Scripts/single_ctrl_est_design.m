@@ -56,12 +56,18 @@ kr = -1/(C * inv(A - B*K)*B);
 % estimator design parameters
 %---------------------------------------------------
 %
-%L=
+Mo = obsv(A,C);
+det_Mo = det(Mo);
+
+% all poles of estimator are placed at -20
+% p_des_o = (s+p)^5 = s^5 + 100*s^4 + 4000*s^3 + 80000*s^2 + 800000*s + 3200000
+p_des_o = A^5 + 100*A^4 + 4000*A^3 + 80000*A^2 + 800000*A + 3200000 * eye(5);
+L = [0 0 0 0 1]*inv(Mo)*p_des_o;
 
 
 %---------------------------------------------------
 % For simulation purposes (not to be modified)
 %---------------------------------------------------
-B1=[B L];                   % Put the B and H matrix together as one matrix B1 (for Simulink implementation purposes) 
+B1=[B L'];                   % Put the B and H matrix together as one matrix B1 (for Simulink implementation purposes) 
 C1=eye(5);                  % Output all state variables from the model
 D1=zeros(5,2);
