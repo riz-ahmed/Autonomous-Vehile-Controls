@@ -62,6 +62,6 @@ kr = -1/(C * inv(A - B*K)*B);
 %---------------------------------------------------
 % For simulation purposes (not to be modified)
 %---------------------------------------------------
-% B1=[B L];                   % Put the B and H matrix together as one matrix B1 (for Simulink implementation purposes) 
-% C1=eye(5);                  % Output all state variables from the model
-% D1=zeros(5,2);
+B1=[B L];                   % Put the B and H matrix together as one matrix B1 (for Simulink implementation purposes) 
+C1=eye(5);                  % Output all state variables from the model
+D1=zeros(5,2);
