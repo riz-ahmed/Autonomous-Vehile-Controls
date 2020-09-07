@@ -3,7 +3,7 @@
 % Vehicle parameters
 %---------------------------------------------------
 
-m=1700;             % Vehicle mass [kg]
+m=2300;             % Vehicle mass [kg]
 J=2000;             % Vehicle inertia [kgm^2]
 c1=80000;          % Front wheel cornering stiffness [kgm/s^2]
 c2=100000;           % Rear wheel cornering stiffness [kgm/s^2
