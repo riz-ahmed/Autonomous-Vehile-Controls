@@ -9,7 +9,17 @@ Vehicle models and control algorithm are developed using Matlab / Simulink
 
 <h2>Description of the project</h3>
 
-The vehicle model is developed in the state-space form which makes it easier to develop controls using modern state-feedback controls.
+Vehicle models are developed in the state-space form which makes it easier to develop controls using modern state-feedback controls. The following models are developed 
+
+<h3>Active Suspension</h3>
+
+Active suspension model descries the vertical dynamics of the vehicle which are thn used to develop a controller to damp the vibrations from the road.
+
+<h3>Power train model</h3>
+
+The prower train model captures the transmission dynamics as well as the engine shaft and wheel speeds. Using this model the engine speed, wheel speed as well as the torsion in the transmission shaft can be controlled.
+
+<h3>Single track model</h3>
 
 A linearized vehicle model is developed using a single track model. For this linearized model, a successfull control is implementation in a model based approach in the following order:
 
