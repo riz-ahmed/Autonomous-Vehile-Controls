@@ -56,14 +56,11 @@ kr = -1/(C * inv(A - B*K)*B);
 % estimator design parameters
 %---------------------------------------------------
 %
-Mo = obsv(A,C);
-det_Mo = det(Mo);
 
-% all poles of estimator are placed at -20
-% p_des_o = (s+p)^5 = s^5 + 100*s^4 + 4000*s^3 + 80000*s^2 + 800000*s + 3200000
-p_des_o = A^5 + 100*A^4 + 4000*A^3 + 80000*A^2 + 800000*A + 3200000 * eye(5);
-L = [0 0 0 0 1]*inv(Mo)*p_des_o;
+% Using Kalman Filter
+% Let Rw = 0.01, sensor data covariance
 
+[P,E,L] = care(A',C',0.01); % P is covariance matrix (solution to Riccati's equation), L is the estimator gain 
 
 %---------------------------------------------------
 % For simulation purposes (not to be modified)
