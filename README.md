@@ -59,11 +59,11 @@ Script file VehicleSteering_LQR.m is used, model file is VehicleSteering_sim_LQR
 </p>
 
 <p>
-  Kalman - Bucy discovered that when the system is observable, the optimal observer gain matrix L is given by <MATH>L = P<sub>x&#771;</sub> C<sup>T</sup> R<sup>-1</sup><sub>w</sub> </MATH>. This optimal observer gain is used in this project that has the following properties:
+  Kalman - Bucy discovered that when the system is observable, the optimal observer gain matrix L is given by <MATH>L = P<sub>x&#771;</sub> C<sup>T</sup> R<sup>-1</sup><sub>w</sub> </MATH>. This optimal observer gain is used in this project that has the following properties
 
-    - always stable
-    - the optimal linear filter for state estimation
-    - <MATH>R<sub>v</sub></MATH> and <MATH>R<sub>w</sub></MATH> are regarded as the design parameters
+   - always stable
+   - the optimal linear filter for state estimation
+   - <MATH>R<sub>v</sub></MATH> and <MATH>R<sub>w</sub></MATH> are regarded as the design parameters
 
 There are similarities between Kalman Filter and LQR, in-fact, using them both in the controller design **_linear quadratic Gaussian controller_**.
 </p>
