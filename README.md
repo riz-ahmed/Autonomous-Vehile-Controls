@@ -73,3 +73,20 @@ The updated system model now includes the following states
 * orientation angle
 * yaw-rate
 * steering angle
+
+## Designing MPC Controller
+
+### Reduced State-Space model
+
+A new reduced state-space model is implemented where the non-linear steering dynamics from the actuator are removed and instead assumed that control is directly applied on the steering angle (delta). The reduced state-space is now:
+* lateral position in Global Frame
+* lateral velocity in Body Frame
+* orientation angle
+* yaw-rate
+
+The input of the system:
+* steering angle (delta) - for which the system is completely controllable
+
+System Outputs:
+* lateral poistion and
+* orientation angle - for which the system is completely observable
