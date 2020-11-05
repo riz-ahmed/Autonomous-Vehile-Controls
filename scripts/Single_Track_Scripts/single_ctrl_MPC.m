@@ -1,3 +1,4 @@
+load Params_Lane.mat t posRef yawRef
 %---------------------------------------------------
 % Linear single track vehicle model
 % Vehicle parameters
@@ -17,20 +18,19 @@ k2=0.0056;          % Actuator gain 2 [rad/V^3]
 %---------------------------------------------------
 % vehicle forward velocity
 %---------------------------------------------------
-vx=20;               % Vehicle velocity [m/s]
+vx=15;               % Vehicle velocity [m/s]
 
 
 %---------------------------------------------------
 % vehcile state space model (lienarised)
 %---------------------------------------------------
-A = [0 1 vx 0 0;
-     0 -(c1 + c2)/(m*vx) 0 -vx-((a*c1-b*c2)/(m*vx)) c1/m;
-     0 0 0 1 0;
-     0 -(a*c1-b*c2)/(J*vx) 0 -(c1*a^2+c2*b^2)/(J*vx) (a*c1)/J;
-     0 0 0 0 -(1/tau)];
-B = [0 0 0 0 (k1/tau)]';
-C =[1 0 0 0 0];
-D =0;
+A = [0,                     1, vx,                           0;
+    0,     -(c1 + c2)/(m*vx),  0, - vx - (a*c1 - b*c2)/(m*vx);
+    0,                     0,  0,                           1;
+    0, -(a*c1 - b*c2)/(J*vx),  0,   -(c1*a^2 + c2*b^2)/(J*vx)];
+B = [0 c1/m 0 (a*c1)/J]';
+C = eye(4);
+D = zeros(4,1);
 
 %---------------------------------------------------
 % controllability analysis
@@ -55,6 +55,6 @@ det_cont_model = det(Mc);       % the system is controllable
 %---------------------------------------------------
 % For simulation purposes (not to be modified)
 %---------------------------------------------------
-B1=[B L'];                   % Put the B and H matrix together as one matrix B1 (for Simulink implementation purposes) 
-C1=eye(5);                  % Output all state variables from the model
-D1=zeros(5,2);
+% B1=[B L'];                   % Put the B and H matrix together as one matrix B1 (for Simulink implementation purposes) 
+% C1=eye(5);                  % Output all state variables from the model
+% D1=zeros(5,2);
