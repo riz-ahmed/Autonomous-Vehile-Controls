@@ -93,3 +93,11 @@ A new reduced state-space model is implemented where the non-linear steering dyn
 **Reference**:
 * The reference signals generated are for both the lateral position and orientation angle. In MPC block the dimensions of measured outputs should match the dimensions of reference signals, in fact they have to be the same signals
 
+**MPC Block Settings**
+* Prediction Horizon: 10 steps
+* Control Horizon: 3 steps
+* Constraints:
+  * input constraints on steeering angle - pi/6 rad, steering rate - pi/12 rad/s
+  * output constraints:
+    * lateral motion: -2 to 6 m
+    * orientiation angle: -0.2 to +0.2
