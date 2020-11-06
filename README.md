@@ -3,9 +3,8 @@ Remote Git repository for Project "Autonomous vehicle controls".
 Vehicle models and control algorithm are developed using Matlab / Simulink
 
 ## Running the simulation
-<p>
-  The simulation models are all listed inside the Models folder and the corresponding scripts are linked to the simulink models, any changes in the simulation parameters canbe done directly using the individual script files associated to model files. For example, for the simulation of reference tracking contoller using LQR, find the model file models/VehicleSteering_sim_LQR.slx and the corresponding script file scripts/VehicleSteering_LQR.m
-</p>
+The simulation models are all listed inside the Models folder and the corresponding scripts are linked to the simulink models, any changes in the simulation parameters canbe done directly using the individual script files associated to model files. For example, for the simulation of reference tracking contoller using LQR, find the model file models/VehicleSteering_sim_LQR.slx and the corresponding script file scripts/VehicleSteering_LQR.m
+
 
 # Description of the project
 
@@ -84,9 +83,13 @@ A new reduced state-space model is implemented where the non-linear steering dyn
 * orientation angle
 * yaw-rate
 
-The input of the system:
+**The input of the system**:
 * steering angle (delta) - for which the system is completely controllable
 
-System Outputs:
+**System Outputs**:
 * lateral poistion and
 * orientation angle - for which the system is completely observable
+
+**Reference**:
+* The reference signals generated are for both the lateral position and orientation angle. In MPC block the dimensions of measured outputs should match the dimensions of reference signals, in fact they have to be the same signals
+
