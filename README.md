@@ -97,7 +97,13 @@ A new reduced state-space model is implemented where the non-linear steering dyn
 * Prediction Horizon: 10 steps
 * Control Horizon: 3 steps
 * Constraints:
-  * input constraints on steeering angle - pi/6 rad, steering rate - pi/12 rad/s
+  * input constraints on steeering angle: pi/6 rad, steering rate: pi/12 rad/s
   * output constraints:
     * lateral motion: -2 to 6 m
     * orientiation angle: -0.2 to +0.2
+* Weights:
+  * weights on inputs:
+    * steeering angle: 0 (it is not important variable for achieving lane changing maneuver)
+  * weights on outputs:
+    * lateral motion: 1.0 (most important variable for achieving lane changing maneuver)
+    * orientiation angle: 0.1
